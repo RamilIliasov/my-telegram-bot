@@ -3,7 +3,10 @@ import telebot
 import json
 import os
 
-TOKEN = os.environ.get("8950796201:AAGMWqXnZ2ftTuYy75kL5RSKLYHyUhrSHnI")  # Лучше через переменные окружения
+TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
+if not TOKEN:
+    raise ValueError("TELEGRAM_BOT_TOKEN not set")
+
 bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler(commands=['start'])
