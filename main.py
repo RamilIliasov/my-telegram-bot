@@ -33,5 +33,5 @@ class TelegramBotHandler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.end_headers()
 
-# Строгая привязка переменной для Vercel
-app = TelegramBotHandler
+# Vercel ищет именно эту переменную на верхнем уровне файла
+handler = TelegramBotHandler
